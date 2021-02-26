@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:weightSum="12"
+        android:layout_height="match_parent"
+        android:theme="@style/RedButtonLightTheme">
+    <!--mstodo: czcionka poppins.zip-->
+
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="3"
+            android:layout_height="0dp">
+
+        <com.github.michalszynkiewicz.digitteacher.DotsView
+                android:id="@+id/dots"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="0dp"
+            android:weightSum="2">
+
+        <Button
+                android:text="Button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/button1"
+                android:layout_weight="1"
+                tools:ignore="NestedWeights"
+                android:fontFamily="@font/comfortaa"
+                android:autoSizeTextType="uniform"
+                 />
+
+        <Space
+                android:layout_width="10dp"
+                android:layout_height="0dp"/>
+
+        <Button
+                android:text="Button"
+                android:textAllCaps="false"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/button2"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa"
+                android:autoSizeTextType="uniform"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:weightSum="2">
+
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/button3"
+                android:layout_weight="1"
+                tools:ignore="NestedWeights"
+                android:fontFamily="@font/comfortaa"
+                android:autoSizeTextType="uniform"/>
+        <Space
+                android:layout_width="10dp"
+                android:layout_height="0dp"/>
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/button4"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa"
+                android:autoSizeTextType="uniform"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+        <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:text="Wynik"
+                android:textColor="#10E010"/>
+    </LinearLayout>
+</LinearLayout>

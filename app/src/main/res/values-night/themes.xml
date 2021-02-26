@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.LettterTeacher" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/beige</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ThemeOverlay.LettterTeacher.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/beige</item>
+        <item name="fullscreenTextColor">@color/light_blue_A400</item>
+    </style>
+    <style name="RedButtonLightTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@color/beige</item>
+        <item name="colorPrimary">@color/beige</item>
+        <item name="colorSecondary">@color/beige</item>
+        <item name="android:colorBackground">@color/beige</item>
+        <item name="android:colorPrimary">@color/beige</item>
+        <item name="android:background">@color/beige</item>
+        <item name="colorButtonNormal">@color/beige</item>
+    </style>
+</resources>

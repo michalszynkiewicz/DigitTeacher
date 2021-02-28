@@ -14,12 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import kotlin.random.Random
 
-// TODO: sometimes letters make the buttons too wide
-// TODO: digits?
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 class FullscreenActivity : AppCompatActivity() {
 
     private lateinit var tts: TextToSpeech
@@ -40,18 +34,26 @@ class FullscreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_fullscreen)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
-                // Set the content to appear under the system bars so that the
-                // content doesn't resize when the system bars hide and show.
-                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 // Hide the nav bar and status bar
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
+
+        window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+            // Note that system bars will only be "visible" if none of the
+            // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+            val dots = findViewById<DotsView>(R.id.dots)
+            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
+                // mstodo merge the branches :)
+                dots.invalidate()
+            } else {
+                dots.invalidate()
+            }
+        }
 
 
         buttons.forEachIndexed { idx, value -> initializeButton(idx, value) }
@@ -59,7 +61,7 @@ class FullscreenActivity : AppCompatActivity() {
         tts = TextToSpeech(applicationContext) {
             if (it != TextToSpeech.ERROR) {
                 tts.language = Locale.forLanguageTag("pl")
-                tts.setPitch(0.8f) // mstodo
+                tts.setPitch(0.95f) // mstodo
                 tts.setSpeechRate(1.0f)
                 initNewTask()
             } else {
